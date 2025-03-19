@@ -45,7 +45,7 @@ const TypingText = ({
 
   // Handle cursor blinking
   useEffect(() => {
-    const blinkInterval = setInterval(() => {
+    const blinkInterval: ReturnType<typeof setInterval> = setInterval(() => {
       setShowCursor((prev) => !prev);
     }, 500); // Blink every 500ms
 
@@ -54,7 +54,7 @@ const TypingText = ({
 
   // Handle typing animation
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     if (isTyping) {
       if (currentIndex < text.length) {
