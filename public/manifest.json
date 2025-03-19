@@ -1,0 +1,16 @@
+{
+  "name": "Shailendra Yadav - DevOps Portfolio",
+  "short_name": "DevOps Portfolio",
+  "description": "Senior DevOps Engineer Portfolio showcasing skills in cloud infrastructure, automation, and DevOps best practices",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#3182CE",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -250,14 +250,19 @@ const Header = () => {
               </Box>
             </VStack>
 
-            <HStack spacing={4} pt={4}>
+            <HStack
+              spacing={{ base: 2, md: 4 }}
+              pt={4}
+              wrap="wrap"
+              justify={{ base: "center", lg: "flex-start" }}
+            >
               <Button
                 as={Link}
                 href={`https://github.com/${
                   import.meta.env.VITE_GITHUB_USERNAME
                 }`}
                 leftIcon={<Icon as={FaGithub} />}
-                size="lg"
+                size={{ base: "md", md: "lg" }}
                 variant="glass"
                 isExternal
               >
@@ -269,7 +274,7 @@ const Header = () => {
                   import.meta.env.VITE_YOUTUBE_CHANNEL_ID
                 }`}
                 leftIcon={<Icon as={FaYoutube} />}
-                size="lg"
+                size={{ base: "md", md: "lg" }}
                 colorScheme="red"
                 variant="solid"
                 _hover={{ bg: "red.600", color: "white" }}
@@ -281,7 +286,7 @@ const Header = () => {
                 as={Link}
                 href="https://linkedin.com/in/ydvsailendar"
                 leftIcon={<Icon as={FaLinkedin} />}
-                size="lg"
+                size={{ base: "md", md: "lg" }}
                 colorScheme="linkedin"
                 variant="ghost"
                 isExternal
@@ -301,8 +306,8 @@ const Header = () => {
           >
             <Box
               position="relative"
-              width="400px"
-              height="400px"
+              width={{ base: "280px", sm: "320px", md: "360px", lg: "400px" }}
+              height={{ base: "280px", sm: "320px", md: "360px", lg: "400px" }}
               borderRadius="3xl"
               overflow="hidden"
               boxShadow="2xl"
