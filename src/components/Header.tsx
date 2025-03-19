@@ -309,7 +309,7 @@ const Header = () => {
               bg="white"
             >
               <Image
-                src="/me/profile.jpeg"
+                src="/profile.jpeg"
                 alt="Shailendra Yadav (शैलेन्द्र यादव)"
                 objectFit="cover"
                 width="100%"

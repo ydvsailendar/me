@@ -58,22 +58,22 @@ interface CertificateProps {
 const certData: CertificateData[] = [
   {
     title: "AWS Certified DevOps Engineer",
-    image: "/me/devops.png",
+    image: "/devops.png",
     link: "https://www.credly.com/badges/61b676ac-1350-4aab-9b4c-7b570a03bca5/public_url",
   },
   {
     title: "Google Cloud DevOps Engineer",
-    image: "/me/gcp.png",
+    image: "/gcp.png",
     link: "https://www.credential.net/your-gcp-cert-id",
   },
   {
     title: "Microsoft Azure DevOps Engineer Expert",
-    image: "/me/azure.png",
+    image: "/azure.png",
     link: "https://www.credly.com/your-azure-cert-id",
   },
   {
     title: "Certified Kubernetes Administrator",
-    image: "/me/cka.png",
+    image: "/cka.png",
     link: "https://www.credly.com/your-kubernetes-cert-id",
   },
 ];
