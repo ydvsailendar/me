@@ -1,70 +1,68 @@
-# DevOps Portfolio
+# DevOps Portfolio Website
 
-A modern single-page application showcasing your latest YouTube videos and GitHub projects.
+A modern, responsive portfolio website built with React, Vite, and Chakra UI, showcasing my skills, experience, and projects in the DevOps and Cloud space.
 
 ## Features
 
-- Display latest YouTube videos from your channel
-- Show top 5 most recently updated GitHub repositories
-- Responsive design with modern UI
-- Easy to customize and deploy
+- **Modern UI** - Clean, responsive design with Chakra UI components
+- **Dynamic Content** - Fetches real-time data from GitHub and YouTube APIs
+- **Dark/Light Mode** - Supports dark and light themes
+- **Optimized Performance** - Built with Vite for fast loading and development
+- **Mobile-Friendly** - Fully responsive on all devices
 
-## Prerequisites
+## Tech Stack
 
-- Node.js (v14 or higher)
-- YouTube API Key
-- GitHub account
+- **Frontend**: React, Chakra UI, TypeScript
+- **Build Tool**: Vite
+- **APIs**: GitHub API, YouTube API
+- **Deployment**: GitHub Pages
 
-## Setup
+## Installation and Setup
 
 1. Clone the repository
-2. Install dependencies:
 
-   ```bash
-   npm install
-   ```
+```bash
+git clone https://github.com/ydvsailendar/me.git
+cd me
+```
 
-3. Create a `.env` file in the root directory based on `.env.example`:
+2. Install dependencies
 
-   ```
-   VITE_YOUTUBE_API_KEY=your_youtube_api_key_here
-   VITE_YOUTUBE_CHANNEL_ID=UCj2UKmHNkF__FFlwGGM0C1w
-   VITE_GITHUB_USERNAME=ydvsailendar
-   ```
+```bash
+npm install
+```
 
-4. Start the development server:
+3. Create a `.env` file in the root directory with your API keys
 
-   ```bash
-   npm run dev
-   ```
+```
+VITE_YOUTUBE_API_KEY=your_youtube_api_key_here
+VITE_YOUTUBE_CHANNEL_ID=your_youtube_channel_id_here
+VITE_GITHUB_USERNAME=your_github_username_here
+VITE_GITHUB_TOKEN=your_github_personal_access_token_here
+```
 
-## Environment Variables
-
-- `VITE_YOUTUBE_API_KEY`: Your YouTube Data API v3 key
-- `VITE_YOUTUBE_CHANNEL_ID`: Your YouTube channel ID
-- `VITE_GITHUB_USERNAME`: Your GitHub username
-
-## Development
-
-To start the development server:
+4. Start the development server
 
 ```bash
 npm run dev
 ```
 
-## Build
-
-To build for production:
+5. Build for production
 
 ```bash
 npm run build
 ```
 
-## Technologies Used
+## Deployment
 
-- React
-- TypeScript
-- Vite
-- Chakra UI
-- YouTube Data API v3
-- GitHub REST API
+This project is deployed to GitHub Pages:
+
+### GitHub Pages
+
+- Set up GitHub Pages in your repository settings
+- GitHub Actions workflow is configured in `.github/workflows/gh-pages.yml`
+- The site will be deployed to <https://ydvsailendar.github.io/me/>
+
+## License
+
+MIT
