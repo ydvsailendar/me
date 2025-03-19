@@ -93,22 +93,31 @@ const ExperienceSection = () => {
   const timelineBg = useColorModeValue("gray.200", "whiteAlpha.200");
 
   return (
-    <Container maxW="container.xl" py={16}>
-      <VStack spacing={12} align="start">
+    <Container
+      maxW="container.xl"
+      py={{ base: 8, md: 16 }}
+      px={{ base: 4, md: 8 }}
+    >
+      <VStack spacing={{ base: 8, md: 12 }} align="start">
         <Heading
           as="h2"
-          size="xl"
+          size={{ base: "lg", md: "xl" }}
           bgGradient="linear(to-r, cyan.400, blue.500)"
           bgClip="text"
         >
           Professional Experience
         </Heading>
 
-        <VStack spacing={8} align="start" position="relative" w="full">
+        <VStack
+          spacing={{ base: 6, md: 8 }}
+          align="start"
+          position="relative"
+          w="full"
+        >
           {/* Timeline line */}
           <Box
             position="absolute"
-            left="24px"
+            left={{ base: "16px", md: "24px" }}
             top="0"
             bottom="0"
             width="2px"
@@ -123,12 +132,12 @@ const ExperienceSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               w="full"
             >
-              <HStack align="start" spacing={6}>
+              <HStack align="start" spacing={{ base: 4, md: 6 }}>
                 <Box position="relative">
                   <Icon
                     as={FaBriefcase}
-                    boxSize={12}
-                    p={3}
+                    boxSize={{ base: 8, md: 12 }}
+                    p={{ base: 2, md: 3 }}
                     bg="white"
                     color="blue.500"
                     borderRadius="full"
@@ -142,7 +151,7 @@ const ExperienceSection = () => {
                   align="start"
                   flex={1}
                   bg="whiteAlpha.900"
-                  p={6}
+                  p={{ base: 4, md: 6 }}
                   borderRadius="xl"
                   border="1px solid"
                   borderColor={borderColor}
@@ -157,40 +166,68 @@ const ExperienceSection = () => {
                     justify="space-between"
                     w="full"
                     wrap="wrap"
-                    spacing={4}
+                    spacing={{ base: 2, md: 4 }}
                   >
                     <VStack align="start" spacing={1}>
-                      <Heading as="h3" size="md" color="blue.600">
+                      <Heading
+                        as="h3"
+                        size={{ base: "sm", md: "md" }}
+                        color="blue.600"
+                      >
                         {exp.title}
                       </Heading>
-                      <Text color="blue.500" fontWeight="medium">
+                      <Text
+                        color="blue.500"
+                        fontWeight="medium"
+                        fontSize={{ base: "sm", md: "md" }}
+                      >
                         {exp.company}
                       </Text>
                     </VStack>
                     <HStack spacing={2} align="center">
-                      <Badge variant="solid" colorScheme="blue">
+                      <Badge
+                        variant="solid"
+                        colorScheme="blue"
+                        fontSize={{ base: "xs", md: "sm" }}
+                      >
                         {exp.type}
                       </Badge>
-                      <Text color="gray.500" fontSize="sm">
+                      <Text
+                        color="gray.500"
+                        fontSize={{ base: "xs", md: "sm" }}
+                      >
                         {exp.period}
                       </Text>
                     </HStack>
                   </HStack>
 
-                  <Text color="gray.500" fontSize="sm">
+                  <Text color="gray.500" fontSize={{ base: "xs", md: "sm" }}>
                     {exp.location}
                   </Text>
 
-                  <VStack align="start" spacing={3} pt={4}>
+                  <VStack
+                    align="start"
+                    spacing={{ base: 2, md: 3 }}
+                    pt={{ base: 3, md: 4 }}
+                  >
                     {exp.achievements.map((achievement, i) => (
-                      <HStack key={i} align="start" spacing={3}>
+                      <HStack
+                        key={i}
+                        align="start"
+                        spacing={{ base: 2, md: 3 }}
+                      >
                         <Icon
                           as={FaCircle}
-                          boxSize={2}
+                          boxSize={{ base: 1.5, md: 2 }}
                           color="blue.500"
-                          mt={2}
+                          mt={{ base: 1.5, md: 2 }}
                         />
-                        <Text color="gray.600">{achievement}</Text>
+                        <Text
+                          color="gray.600"
+                          fontSize={{ base: "sm", md: "md" }}
+                        >
+                          {achievement}
+                        </Text>
                       </HStack>
                     ))}
                   </VStack>
