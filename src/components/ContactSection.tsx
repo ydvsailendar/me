@@ -78,22 +78,22 @@ const ContactSection = () => {
   ];
 
   return (
-    <Box bg={gradientBg} py={16} id="contact">
-      <Container maxW="container.xl">
-        <VStack spacing={12} align="center">
-          <VStack spacing={4} textAlign="center" maxW="2xl">
+    <Box bg={gradientBg} py={{ base: 8, md: 16 }} id="contact">
+      <Container maxW="container.xl" px={{ base: 4, md: 8 }}>
+        <VStack spacing={{ base: 8, md: 12 }} align="center">
+          <VStack spacing={{ base: 3, md: 4 }} textAlign="center" maxW="2xl">
             <Badge
               colorScheme="brand"
               px={3}
               py={1}
               borderRadius="full"
-              fontSize="sm"
+              fontSize={{ base: "xs", md: "sm" }}
             >
               Contact Information
             </Badge>
             <Heading
               as="h2"
-              size="2xl"
+              size={{ base: "xl", md: "2xl" }}
               bgGradient="linear(to-r, brand.400, brand.600)"
               bgClip="text"
               fontWeight="bold"
@@ -101,7 +101,12 @@ const ContactSection = () => {
             >
               Let's Connect
             </Heading>
-            <Text fontSize="xl" color="gray.600" maxW="xl" mx="auto">
+            <Text
+              fontSize={{ base: "md", md: "xl" }}
+              color="gray.600"
+              maxW="xl"
+              mx="auto"
+            >
               Reach out to discuss DevOps solutions, cloud architecture, or any
               opportunities for collaboration.
             </Text>
@@ -109,7 +114,7 @@ const ContactSection = () => {
 
           <SimpleGrid
             columns={{ base: 1, lg: 3 }}
-            spacing={8}
+            spacing={{ base: 5, md: 8 }}
             w="full"
             maxW="6xl"
           >
@@ -122,24 +127,32 @@ const ContactSection = () => {
             >
               <Box
                 bg={cardBg}
-                p={8}
+                p={{ base: 5, md: 8 }}
                 borderRadius="xl"
                 boxShadow="lg"
                 border="1px solid"
                 borderColor={borderColor}
                 h="full"
               >
-                <VStack spacing={6} align="start" height="full">
-                  <Heading size="md" color="brand.700">
+                <VStack
+                  spacing={{ base: 4, md: 6 }}
+                  align="start"
+                  height="full"
+                >
+                  <Heading size={{ base: "sm", md: "md" }} color="brand.700">
                     Contact Information
                   </Heading>
 
-                  <VStack spacing={4} align="start" width="full">
+                  <VStack
+                    spacing={{ base: 3, md: 4 }}
+                    align="start"
+                    width="full"
+                  >
                     {contactInfo.map((item, index) => (
                       <HStack key={index} spacing={3} color="gray.600">
                         <Icon
                           as={item.icon}
-                          boxSize={5}
+                          boxSize={{ base: 4, md: 5 }}
                           color={highlightColor}
                         />
                         {item.link ? (
@@ -147,11 +160,14 @@ const ContactSection = () => {
                             href={item.link}
                             color="gray.600"
                             _hover={{ color: highlightColor }}
+                            fontSize={{ base: "sm", md: "md" }}
                           >
                             {item.text}
                           </Link>
                         ) : (
-                          <Text>{item.text}</Text>
+                          <Text fontSize={{ base: "sm", md: "md" }}>
+                            {item.text}
+                          </Text>
                         )}
                       </HStack>
                     ))}
@@ -159,11 +175,15 @@ const ContactSection = () => {
 
                   <Divider borderColor={borderColor} />
 
-                  <VStack spacing={4} align="start" width="full">
-                    <Heading size="sm" color="brand.700">
+                  <VStack
+                    spacing={{ base: 3, md: 4 }}
+                    align="start"
+                    width="full"
+                  >
+                    <Heading size={{ base: "xs", md: "sm" }} color="brand.700">
                       My Availability
                     </Heading>
-                    <Text color="gray.600">
+                    <Text color="gray.600" fontSize={{ base: "sm", md: "md" }}>
                       I'm currently open to DevOps Engineering opportunities and
                       consulting projects.
                     </Text>
@@ -181,18 +201,22 @@ const ContactSection = () => {
             >
               <Box
                 bg={cardBg}
-                p={8}
+                p={{ base: 5, md: 8 }}
                 borderRadius="xl"
                 boxShadow="lg"
                 border="1px solid"
                 borderColor={borderColor}
                 h="full"
               >
-                <VStack spacing={6} align="start" height="full">
-                  <Heading size="md" color="brand.700">
+                <VStack
+                  spacing={{ base: 4, md: 6 }}
+                  align="start"
+                  height="full"
+                >
+                  <Heading size={{ base: "sm", md: "md" }} color="brand.700">
                     Get in Touch
                   </Heading>
-                  <Text color="gray.600">
+                  <Text color="gray.600" fontSize={{ base: "sm", md: "md" }}>
                     Whether you have a question about DevOps, want to
                     collaborate, or just want to say hi, I'll try my best to get
                     back to you!
@@ -202,7 +226,7 @@ const ContactSection = () => {
                     <Button
                       as="a"
                       href="mailto:ydvsailendar.official@gmail.com"
-                      size="lg"
+                      size={{ base: "md", md: "lg" }}
                       colorScheme="brand"
                       leftIcon={<Icon as={FaEnvelope} />}
                       rightIcon={<Icon as={FaArrowRight} />}
@@ -219,13 +243,13 @@ const ContactSection = () => {
 
                   <Divider borderColor={borderColor} />
 
-                  <VStack spacing={4} width="full">
-                    <Heading size="sm" color="brand.700">
+                  <VStack spacing={{ base: 3, md: 4 }} width="full">
+                    <Heading size={{ base: "xs", md: "sm" }} color="brand.700">
                       Connect on Social Media
                     </Heading>
 
                     <HStack
-                      spacing={4}
+                      spacing={{ base: 2, md: 4 }}
                       width="full"
                       flexWrap="wrap"
                       justify="center"
@@ -239,7 +263,7 @@ const ContactSection = () => {
                         >
                           <Button
                             leftIcon={<Icon as={link.icon} />}
-                            size="md"
+                            size={{ base: "sm", md: "md" }}
                             variant={
                               link.label === "YouTube" ? "solid" : "outline"
                             }
@@ -268,8 +292,12 @@ const ContactSection = () => {
                       ))}
                     </HStack>
 
-                    <Box w="full" mt={4}>
-                      <Text fontSize="sm" color="gray.500" textAlign="center">
+                    <Box w="full" mt={{ base: 2, md: 4 }}>
+                      <Text
+                        fontSize={{ base: "xs", md: "sm" }}
+                        color="gray.500"
+                        textAlign="center"
+                      >
                         Follow me for DevOps tutorials, cloud infrastructure
                         guides, and technology insights.
                       </Text>

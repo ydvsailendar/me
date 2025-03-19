@@ -239,10 +239,10 @@ const YouTubeSection = () => {
   );
 
   return (
-    <Box bg={gradientBg} py={16} id="videos">
-      <Container maxW="container.xl">
-        <VStack spacing={12} align="center">
-          <VStack spacing={4} textAlign="center" maxW="2xl">
+    <Box bg={gradientBg} py={{ base: 8, md: 16 }} id="videos">
+      <Container maxW="container.xl" px={{ base: 4, md: 8 }}>
+        <VStack spacing={{ base: 6, md: 12 }} align="center">
+          <VStack spacing={{ base: 3, md: 4 }} textAlign="center" maxW="2xl">
             <Badge
               colorScheme="red"
               px={3}
@@ -253,7 +253,7 @@ const YouTubeSection = () => {
               YouTube Channel
             </Badge>
             <Heading
-              size="2xl"
+              size={{ base: "xl", md: "2xl" }}
               bgGradient="linear(to-r, red.500, red.600)"
               bgClip="text"
               fontWeight="bold"
@@ -262,7 +262,12 @@ const YouTubeSection = () => {
                 ? "Featured Videos"
                 : "Latest Videos"}
             </Heading>
-            <Text fontSize="xl" color={textColor} maxW="xl" mx="auto">
+            <Text
+              fontSize={{ base: "md", md: "xl" }}
+              color={textColor}
+              maxW="xl"
+              mx="auto"
+            >
               Check out my latest DevOps tutorials, cloud infrastructure guides,
               and technology reviews.
             </Text>
@@ -280,7 +285,7 @@ const YouTubeSection = () => {
                 <Button
                   leftIcon={<Icon as={FaYoutube} />}
                   colorScheme="red"
-                  size="md"
+                  size={{ base: "sm", md: "md" }}
                   _hover={{
                     bg: "red.600",
                     transform: "translateY(-2px)",
@@ -330,8 +335,8 @@ const YouTubeSection = () => {
             )
           ) : (
             <SimpleGrid
-              columns={{ base: 1, md: 2, lg: 3 }}
-              spacing={8}
+              columns={{ base: 1, sm: 2, lg: 3 }}
+              spacing={{ base: 4, md: 8 }}
               w="full"
             >
               {loading
@@ -357,7 +362,7 @@ const YouTubeSection = () => {
                         _hover={{ textDecoration: "none" }}
                       >
                         <Box
-                          p={6}
+                          p={{ base: 4, md: 6 }}
                           borderRadius="xl"
                           border="1px solid"
                           borderColor={borderColor}
@@ -371,7 +376,11 @@ const YouTubeSection = () => {
                           height="100%"
                           position="relative"
                         >
-                          <VStack align="start" spacing={4} height="100%">
+                          <VStack
+                            align="start"
+                            spacing={{ base: 3, md: 4 }}
+                            height="100%"
+                          >
                             <Box position="relative" w="full">
                               <AspectRatio ratio={16 / 9} w="full">
                                 <Image
@@ -379,6 +388,7 @@ const YouTubeSection = () => {
                                   alt={video.snippet.title}
                                   objectFit="cover"
                                   borderRadius="lg"
+                                  loading="lazy"
                                 />
                               </AspectRatio>
                               <Box
@@ -387,9 +397,9 @@ const YouTubeSection = () => {
                                 left="50%"
                                 transform="translate(-50%, -50%)"
                                 bg="red.500"
-                                p={3}
-                                width="52px"
-                                height="52px"
+                                p={{ base: 2, md: 3 }}
+                                width={{ base: "42px", md: "52px" }}
+                                height={{ base: "42px", md: "52px" }}
                                 display="flex"
                                 alignItems="center"
                                 justifyContent="center"
@@ -398,7 +408,11 @@ const YouTubeSection = () => {
                                 _hover={{ opacity: 1, bg: "red.600" }}
                                 transition="all 0.3s"
                               >
-                                <Icon as={FaPlay} color="white" boxSize={5} />
+                                <Icon
+                                  as={FaPlay}
+                                  color="white"
+                                  boxSize={{ base: 4, md: 5 }}
+                                />
                               </Box>
                             </Box>
 
@@ -408,7 +422,7 @@ const YouTubeSection = () => {
                               align="center"
                             >
                               <Heading
-                                size="md"
+                                size={{ base: "sm", md: "md" }}
                                 color={headingColor}
                                 fontWeight="semibold"
                                 noOfLines={2}
@@ -419,15 +433,15 @@ const YouTubeSection = () => {
                                 <Icon
                                   as={FaExternalLinkAlt}
                                   color="red.500"
-                                  boxSize={4}
+                                  boxSize={{ base: 3, md: 4 }}
                                 />
                               </Tooltip>
                             </Flex>
 
                             <Text
                               color={textColor}
-                              fontSize="sm"
-                              noOfLines={2}
+                              fontSize={{ base: "xs", md: "sm" }}
+                              noOfLines={{ base: 2, md: 2 }}
                               flexGrow={1}
                             >
                               {video.snippet.description}

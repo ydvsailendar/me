@@ -174,8 +174,8 @@ const Certificate = ({ cert, borderColor, bgColor }: CertificateProps) => {
           bg={bgColor}
           transition="transform 0.2s"
           _hover={{ transform: "scale(1.05)", boxShadow: "lg" }}
-          width="80px"
-          height="80px"
+          width={{ base: "70px", sm: "80px" }}
+          height={{ base: "70px", sm: "80px" }}
           mx="auto"
           display="flex"
           alignItems="center"
@@ -196,7 +196,11 @@ const Certificate = ({ cert, borderColor, bgColor }: CertificateProps) => {
               }}
             />
           ) : (
-            <Text fontSize="xs" fontWeight="bold" textAlign="center">
+            <Text
+              fontSize={{ base: "2xs", sm: "xs" }}
+              fontWeight="bold"
+              textAlign="center"
+            >
               {cert.title
                 .split(" ")
                 .map((word: string) => word[0])
@@ -215,16 +219,16 @@ const SkillsSection = () => {
   const iconColor = useColorModeValue("brand.500", "brand.300");
 
   return (
-    <Box w="full">
-      <VStack spacing={12} align="stretch">
+    <Box w="full" px={{ base: 4, md: 0 }}>
+      <VStack spacing={{ base: 8, md: 12 }} align="stretch">
         {/* Certifications */}
-        <VStack spacing={6} align="center">
-          <Heading size="lg" textAlign="center">
+        <VStack spacing={{ base: 4, md: 6 }} align="center">
+          <Heading size={{ base: "md", md: "lg" }} textAlign="center">
             Professional Certifications
           </Heading>
           <SimpleGrid
             columns={{ base: 2, sm: 4 }}
-            spacing={{ base: 4, md: 6 }}
+            spacing={{ base: 3, md: 6 }}
             width="100%"
             maxWidth="560px"
             justifyItems="center"
@@ -241,10 +245,16 @@ const SkillsSection = () => {
         </VStack>
 
         {/* Areas of Expertise */}
-        <VStack spacing={8}>
-          <VStack spacing={3} textAlign="center">
-            <Heading size="lg">Areas of Expertise</Heading>
-            <Text maxW="2xl" color="gray.600">
+        <VStack spacing={{ base: 6, md: 8 }}>
+          <VStack spacing={{ base: 2, md: 3 }} textAlign="center">
+            <Heading size={{ base: "md", md: "lg" }}>
+              Areas of Expertise
+            </Heading>
+            <Text
+              maxW="2xl"
+              color="gray.600"
+              fontSize={{ base: "sm", md: "md" }}
+            >
               Here are the key technology areas where I can help you with
               DevOps, cloud engineering, application development, and
               infrastructure optimization
@@ -253,7 +263,7 @@ const SkillsSection = () => {
 
           <SimpleGrid
             columns={{ base: 1, md: 2, lg: 3 }}
-            spacing={{ base: 4, md: 6 }}
+            spacing={{ base: 3, md: 6 }}
             width="100%"
           >
             {skills.map((category) => (
@@ -265,12 +275,16 @@ const SkillsSection = () => {
                 _hover={{ boxShadow: "md", transform: "translateY(-2px)" }}
                 transition="all 0.2s"
               >
-                <CardBody>
-                  <VStack spacing={4} align="start">
-                    <Heading size="md" color="brand.500">
+                <CardBody p={{ base: 3, md: 5 }}>
+                  <VStack spacing={{ base: 3, md: 4 }} align="start">
+                    <Heading size={{ base: "sm", md: "md" }} color="brand.500">
                       {category.category}
                     </Heading>
-                    <VStack spacing={3} align="stretch" width="100%">
+                    <VStack
+                      spacing={{ base: 2, md: 3 }}
+                      align="stretch"
+                      width="100%"
+                    >
                       {category.items.map((skill) => (
                         <HStack key={skill.name} spacing={3}>
                           <Icon
@@ -278,7 +292,9 @@ const SkillsSection = () => {
                             boxSize={{ base: 4, md: 5 }}
                             color={iconColor}
                           />
-                          <Text>{skill.name}</Text>
+                          <Text fontSize={{ base: "sm", md: "md" }}>
+                            {skill.name}
+                          </Text>
                         </HStack>
                       ))}
                     </VStack>
@@ -291,26 +307,30 @@ const SkillsSection = () => {
 
         {/* Contact CTA */}
         <Box
-          p={{ base: 6, md: 8 }}
+          p={{ base: 4, md: 8 }}
           borderRadius="2xl"
           bg="brand.50"
           border="1px solid"
           borderColor="brand.100"
         >
-          <VStack spacing={4} textAlign="center">
+          <VStack spacing={{ base: 3, md: 4 }} textAlign="center">
             <Badge
               colorScheme="brand"
               px={3}
               py={1}
               borderRadius="full"
-              fontSize="sm"
+              fontSize={{ base: "xs", md: "sm" }}
             >
               Let's Collaborate
             </Badge>
-            <Heading size="md" color="brand.700">
+            <Heading size={{ base: "sm", md: "md" }} color="brand.700">
               Need help with your DevOps, Security, or Development challenges?
             </Heading>
-            <Text color="gray.600" maxW="2xl">
+            <Text
+              color="gray.600"
+              maxW="2xl"
+              fontSize={{ base: "sm", md: "md" }}
+            >
               Whether you're looking to implement CI/CD pipelines, enhance
               security operations, design cloud-native systems, develop backend
               services, or optimize your infrastructure, I'm here to help.
@@ -319,11 +339,11 @@ const SkillsSection = () => {
               <Badge
                 variant="solid"
                 colorScheme="brand"
-                px={4}
-                py={2}
+                px={{ base: 3, md: 4 }}
+                py={{ base: 1.5, md: 2 }}
                 borderRadius="full"
                 cursor="pointer"
-                fontSize="md"
+                fontSize={{ base: "sm", md: "md" }}
                 _hover={{ bg: "brand.600", transform: "translateY(-1px)" }}
                 transition="all 0.2s"
               >
